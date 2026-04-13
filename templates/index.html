@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Validation Platform</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>ZeroBounce-style Email Validation App</h1>
+      <p class="subtitle">Validate single emails or bulk lists with a cleanability score.</p>
+
+      <section class="card">
+        <h2>Single Validation</h2>
+        <div class="row">
+          <input id="singleEmail" placeholder="name@company.com" />
+          <button id="checkOne">Validate</button>
+        </div>
+        <pre id="singleResult" class="result"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Bulk Validation (CSV or one per line)</h2>
+        <textarea id="batchEmails" rows="8" placeholder="alice@example.com\ninfo@startup.com\ntest@mailinator.com"></textarea>
+        <button id="checkBatch">Validate Batch</button>
+        <div id="summary"></div>
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Score</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
