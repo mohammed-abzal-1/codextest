@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Validation Platform</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>ZeroBounce-style Email Validation App</h1>
+      <p class="subtitle">Validate single emails or bulk lists with score, DNS checks, and typo suggestions.</p>
+
+      <section class="card">
+        <h2>Single Validation</h2>
+        <div class="row">
+          <input id="singleEmail" placeholder="name@company.com" />
+          <button id="checkOne">Validate</button>
+        </div>
+        <pre id="singleResult" class="result"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Bulk Validation (CSV or one per line)</h2>
+        <textarea id="batchEmails" rows="8" placeholder="alice@example.com
+info@startup.com
+test@mailinator.com"></textarea>
+        <div class="actions">
+          <button id="checkBatch">Validate Batch</button>
+          <button id="downloadCsv" disabled>Download CSV</button>
+        </div>
+        <div id="summary"></div>
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Score</th>
+              <th>DNS</th>
+              <th>Suggestion</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
